@@ -1,0 +1,132 @@
+body {
+    font-family: 'Oxygen', sans-serif;
+}
+
+/* عمل تنسيق العنصر الأب */
+.container {
+    /* جعل خلفية الحاوي رمادي اللون */
+    background-color: #f7f7f7;
+    border: 1px solid #efefef;
+    /* العرض */
+    width: 700px;
+    /* الطول */
+    height: 120px;
+    /* تنسيق الهوامش الجانبية من أجل أن يكون الحاوي في منتصف الصفحة  */
+    margin: 0 auto;
+}
+
+/* تنسيق العنصر الذي يحتوي على عنصر قائمة المراحل */
+.line {
+    /* جعل قيمة الطول صغيرة ليظهر على شكل خط */
+    height: 6px;
+    /* إعطاؤه لون أخضر خافت */
+    background-color: #6aa883;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    top: 22%;
+}
+
+/* عنصر المراحل */
+#steps {
+    /* من استخدام تقنية الفلكس بوكس من أجل عرض العناصر أفقيا */
+    display: flex;
+    flex-direction: row;
+    /* جعل وضعية القائبة نسبية للعنصر الأب من أجل التحكم في وضعية العناصر */
+    position: relative;
+    top: -32px;
+    /* حذف النقاط والهوامش الافتراضية لعناصر القائمة */
+    list-style: none;
+    /* توزيع العناصر بحيت تكون المسافة بينهما متباعدة ومتساوية */
+    justify-content: space-between;
+    padding: 0;
+    /* من أجل جعل الأيقونات تظهر في الوسط */
+    align-items: center;
+}
+
+/* عناصر القائمة */
+.items {
+    /* تحديد الطول والعرض بنفس القيمة */
+    width: 70px;
+    height: 70px;
+    /* جعل العنصر يظهر على شكل دائري */
+    border-radius: 50%;
+    /* تحديد لون الدائرة */
+    border: 2px #308c41 solid;
+    /* تحديد لون خلفية الدائرة عندما تكون غير مفعلة */
+    background-color: #f7f7f7;
+    /* من استخدام تقنية الفلكس بوكس من أجل عرض العناصر عموديا */
+    display: flex;
+    flex-direction: column;
+    /* توسيط المحتوى */
+    justify-content: center;
+    align-items: center;
+    /* جعل العناصر تظهر فوق الخط */
+    z-index: 99;
+    /* عمل حدود خارجية بنفس لون الخلفية لتقطيع الخط بين كل عنصر */
+    outline: #f7f7f7 solid 4px;
+}
+
+/* عنصر الأيقونة */
+i {
+    /* تحديد حجم الأيقونة ولونها */
+    font-size: 24pt !important;
+    color: #308c41;
+}
+
+/* تنسيق نص المراحل */
+.items span {
+    position: absolute;
+    top: 78px;
+    color: darkolivegreen;
+}
+
+/* هذا الكلاس يضاف إلى المراحل المفعلة عن طريق الجافاسكريبت */
+.active {
+    /* تغيير لون خلفية الدائرة */
+    background-color: #308c41;
+}
+
+/* الأيقونات المفعلة */
+.active i {
+    /* تغيير لون الأيقونة إلى الأبيض من أجل التباين */
+    color: aliceblue;
+}
+
+/* تغيير نص العنصر المفعل إلى اللون الأخضر */
+.active span {
+    color: #308c41;
+    font-weight: bold;
+}
+
+/* تغيير لون الخط عند تطور المراحل */
+#prog {
+    background-color: #308c41;
+    top: 20px;
+    /* جعل العرض افتراضيا 0 من أجل التحكم فيه عن طريق الجافاسكريبت */
+    width: 0;
+    margin: 0 10%;
+    border-radius: 0 5px 5px 0;
+    /* من أجل إضفاء الحركية عند تغيير قيمة العرض */
+    transition: all 1s ease;
+}
+
+/* تنسيقات الزر */
+#next {
+    width: 100px;
+    margin: 20px auto;
+    padding: 4px;
+    color: #308c41;
+    border: #6aa883 solid 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: all 1s ease;
+}
+
+/* عند وضع الماوس على الزر */
+#next:hover {
+    color: antiquewhite;
+    background-color: #308c41;
+}
